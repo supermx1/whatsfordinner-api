@@ -1,0 +1,22 @@
+# On push
+
+name: Fetch
+on: [push]
+
+jobs:
+
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Step 1
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Step 2
+      - name: Get Data
+        run: |
+          curl 'https://api.airtable.com/v0/app5QplNRBqYTwfDe/Imported%20table' \
+              --header 'Authorization: Bearer ${{ secrets.AIRTABLE_KEY }}' > data.json
+          
+         
