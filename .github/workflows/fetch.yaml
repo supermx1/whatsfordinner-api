@@ -1,7 +1,10 @@
 # On push
 
 name: Fetch
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '0 * * * *' # Every hour
 
 jobs:
 
