@@ -4,7 +4,7 @@ name: Fetch
 on:
   push:
   schedule:
-    - cron: '0 * * * *' # Every hourm
+    - cron: '0 0 * * *' # Every Day
 
 jobs:
 
